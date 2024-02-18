@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useContext } from "react";
 import { useTranslations } from "next-intl";
+import { MainBtns } from "@/components/MainBtns";
 
 const variants = {
   open: { clipPath: "circle(0% at 50% 50%)" },
@@ -26,38 +27,17 @@ export default function Home() {
   return (
     <>
       <div className="container my-0 mx-auto px-5">
-        {t("title")}
         <div className="xl:grid xl:grid-cols-main h-full 2xl:gap-10 xl:gap-2">
           {isDesktop1280.matches && <Burger />}
 
           <div className="flex items-center">
             <section className="flex gap-2 justify-between lg:min-h-screen items-center max-lg:flex-col-reverse">
               <div className="max-w-3xl w-full h-max">
-                <h1 className="mb-4 main-title text">
-                  Привет!) Я Вадим, Frontend разработчик
-                </h1>
+                <h1 className="mb-4 main-title text">{t("greetings")}</h1>
 
-                <p className="mb-7 text">
-                  Я работаю в области веб-разработки более 4 лет. За это время я
-                  создал более 100+ различных сайтов разной сложности. И успел
-                  целый год проработать в коммерческой компании, в комадной
-                  разработке. На данный момент я живу в прекрасном, солнечном
-                  городе Батуми (Грузия), в свободное время люблю проводить
-                  время с семьей и друзьями, а так же выбираться для
-                  "перезагрузки" в походы по горам. Так же по-мимо опыта в
-                  frontend разработке у меня есть преподовательский стаж, я
-                  обучал и подготавливал junior-разработчиков к первым заказам.
-                </p>
+                <p className="mb-7 text">{t("description")}</p>
 
-                <div className="flex gap-4">
-                  <Button className="bg-icons-light dark:bg-icons-dark py-2 px-2 rounded-3xl text hover:text-white-light transition-colors delay-50">
-                    Связаться со мной
-                  </Button>
-
-                  <Button className="bg-icons-light dark:bg-icons-dark py-2 px-2 rounded-3xl text hover:text-white-light transition-colors delay-50">
-                    Скачать резюме
-                  </Button>
-                </div>
+                <MainBtns />
               </div>
 
               <div className="flex-grow-0 flex-shrink-0">

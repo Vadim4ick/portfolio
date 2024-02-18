@@ -5,10 +5,10 @@ import { Burger } from "@/components/Burger";
 import { BurgerProviderContext } from "@/context/BurgerOpen";
 import { useMedia } from "@/hooks/useMedia";
 import { Button } from "@/ui/Button";
-import { Preloader } from "@/ui/Preloader";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useContext } from "react";
+import { useTranslations } from "next-intl";
 
 const variants = {
   open: { clipPath: "circle(0% at 50% 50%)" },
@@ -21,9 +21,12 @@ export default function Home() {
 
   const { open } = useContext(BurgerProviderContext);
 
+  const t = useTranslations("Index");
+
   return (
     <>
       <div className="container my-0 mx-auto px-5">
+        {t("title")}
         <div className="xl:grid xl:grid-cols-main h-full 2xl:gap-10 xl:gap-2">
           {isDesktop1280.matches && <Burger />}
 

@@ -3,7 +3,6 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { BurgerOpen } from "@/context/BurgerOpen";
 import { ThemeProvider } from "@/context/ThemeProvider";
-import { ProviderMedia } from "@/context/ProviderMedia";
 
 const ubunty = Ubuntu({
   subsets: ["latin"],
